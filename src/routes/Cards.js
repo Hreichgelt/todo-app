@@ -9,6 +9,8 @@ const Cards = () => {
     )
 }
 
+export default Cards
+
 // Need to link todo-server repo with this to import data
 
 // Parent Child flow 

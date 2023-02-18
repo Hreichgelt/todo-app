@@ -1,6 +1,6 @@
 import React from "react";
 import AllTodoCards from "./AllTodoCards"
-import TodoData from "./TodoData"
+import { TodoData } from "./TodoData"
 
 const Todo = () => {
     return (
@@ -11,10 +11,12 @@ const Todo = () => {
                     key={index}
                     title={todo.title}
                     description={todo.description}
-                    duedate={todo.duedate}
+                    dueAt={todo.dueAt}
                     />
                 )
             })}
         </div>
     )
 }
+
+export default Todo
