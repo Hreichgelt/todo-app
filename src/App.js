@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from "react-router-dom";
 import Cards from "./routes/Cards";
-// import Create from "./routes/Create";
+import Create from "./routes/Create";
 import './App.css';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div>
       <Routes>
         <Route path='/'element={<Cards />} />
-        {/* <Route path='/Create-Todo' element={<Create />} /> */}
+        <Route path='/Create' element={<Create />} />
       </Routes>
     </div>
   );
