@@ -4,39 +4,45 @@ import axios from "axios";
 class CreateTodoForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = {
+          title: '',
+          description: '',
+          dueAt: ''
+        };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    handleChange(event) {
-        this.setState({value: event.target.value});
+    handleChange(name) {
+        return (event) => {
+          // line by line - copy, change, update state
+          const newState = Object.assign(this.state);
+          newState[name] = event.target.value
+          this.setState(newState);
+        }
     }
     handleSubmit(event) {
-        alert('To do Submitted: ' + this.state.value);
         event.preventDefault();
 
         const payload = {
             title: this.state.title,
-            description: this.state.description
+            description: this.state.description,
+            dueAt: this.state.dueAt
         };
 
         axios({
-            url: 'http://localhost:3000/todo/',
+            url: 'http://localhost:8080/todo',
             method: 'POST',
             data: payload
         })
         .then(() => {
             console.log('Data sent')
         })
-        .catch(() => {
-            console.log('Error brah')
+        .catch((err) => {
+            console.log(err)
         });
     }
 
- 
-
-  
 render() {
 
         console.log('State:', this.state);
@@ -45,21 +51,21 @@ render() {
       <form className="FormTodo" onSubmit={this.handleSubmit}>
         <label>
           Title:
-          <input type={"text"} value={this.state.value} 
+          <input type={"text"} value={this.state.title} 
           name="Title" 
-          onChange={this.handleChange} />
+          onChange={this.handleChange('title')} />
         </label>
         <label>
           Description:
-          <input type={"text"} value={this.state.value} 
+          <input type={"text"} value={this.state.description} 
           rows={5} maxLength={500} name="Description" 
-          onChange={this.handleChange} />
+          onChange={this.handleChange('description')} />
         </label>
         <label>
           Due Date:
-          <input type={"date"} value={this.state.value} 
+          <input type={"date"} value={this.state.dueAt} 
           name="Due Date" 
-          onChange={this.handleChange} />
+          onChange={this.handleChange('dueAt')} />
         </label>
         <button
           className="btn"

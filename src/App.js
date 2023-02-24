@@ -3,14 +3,26 @@ import { Route, Routes } from "react-router-dom";
 import Cards from "./routes/Cards";
 import Create from "./routes/Create";
 import './App.css';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Cards />
+  },
+  {
+    path: "/Create",
+    element: <Create />
+  }
+]);
 
 function App() {
   return (
     <div>
-      <Routes>
-        <Route path='/'element={<Cards />} />
-        <Route path='/Create' element={<Create />} />
-      </Routes>
+          <RouterProvider router={router} />
     </div>
   );
 }
