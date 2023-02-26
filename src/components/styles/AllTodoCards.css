@@ -1,0 +1,79 @@
+
+.all-todos-container {
+    width: 90%;
+    background-color: darkgrey;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 6%;
+}
+
+.todo-container {
+    display: flex;
+    justify-content:center;
+    padding: 1rem;
+    margin: 1rem;
+    flex-grow: 4;
+    border-radius: 6%;
+    /* box-shadow: 5px 5px rgb(56, 66, 61); */
+
+}
+
+.todo-card {
+    width: 250px;
+    height: 250px;
+    flex-grow: 4;
+    border-radius: 6%;
+    box-shadow: 5px 5px rgb(56, 66, 61);
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-radius: 6%;
+    padding: .25rem;
+    margin: .25rem;
+}
+
+.complete, .delete {
+    width: min-content;
+    height: min-content;
+    border-radius: 6%;
+    box-shadow: 5px 5px rgb(56, 66, 61);
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.description {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: .25rem;
+}
+
+@media only screen and (max-width: 1024px) {
+.all-todos-container, .todo-container, .todo-card .btns{
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    border-radius: 2%;
+
+    /* width: 90%; */
+}
+}
+
+/* @media only screen and (max-width: 25px) {
+    .btns{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        border-radius: 6%;
+        padding: .25rem;
+        margin: .25rem;
+    }
+} */
