@@ -1,5 +1,7 @@
 import React from "react";
+import './styles/CreateTodoForm.css'
 import axios from "axios";
+import { format } from 'date-fns';
 
 class CreateTodoForm extends React.Component {
     constructor(props) {
@@ -48,20 +50,20 @@ render() {
         console.log('State:', this.state);
 
   return (
-      <form className="FormTodo" onSubmit={this.handleSubmit}>
-        <label>
+      <form className="formTodo" onSubmit={this.handleSubmit}>
+        <label className="title">
           Title:
           <input type={"text"} value={this.state.title} 
           name="Title" 
           onChange={this.handleChange('title')} />
         </label>
-        <label>
+        <label className="description">
           Description:
           <input type={"text"} value={this.state.description} 
           rows={5} maxLength={500} name="Description" 
           onChange={this.handleChange('description')} />
         </label>
-        <label>
+        <label className="dueat">
           Due Date:
           <input type={"date"} value={this.state.dueAt} 
           name="Due Date" 
