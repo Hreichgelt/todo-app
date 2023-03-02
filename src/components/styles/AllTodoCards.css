@@ -5,7 +5,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    border-radius: 6%;
+    /* border-radius: 6%; */
 }
 
 .todo-container {
@@ -65,6 +65,9 @@
     /* width: 90%; */
 }
 }
+
+/* Check out CSS Grid  */
+
 
 /* @media only screen and (max-width: 25px) {
     .btns{

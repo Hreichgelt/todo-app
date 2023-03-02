@@ -1,84 +1,121 @@
 import React from "react";
-import './styles/CreateTodoForm.css'
+import "./styles/CreateTodoForm.css";
 import axios from "axios";
-import { format } from 'date-fns';
+import { clear } from "@testing-library/user-event/dist/clear";
+// import { format } from 'date-fns';
+
+// format(new Date(), 'mm/dd/yyyy')
+
+// if(state.succeeded) {
+//   return <p>Todo Submitted!</p>
+// }
 
 class CreateTodoForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          title: '',
-          description: '',
-          dueAt: ''
-        };
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: "",
+      description: "",
+      dueAt: "",
+    };
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.resetData = this.resetData.bind(this);
+
+  }
+   
+    resetData() {
+      this.setState({
+        title: "",
+        description: "",
+        dueAt: "",
+      });
     }
-    handleChange(name) {
-        return (event) => {
-          // line by line - copy, change, update state
-          const newState = Object.assign(this.state);
-          newState[name] = event.target.value
-          this.setState(newState);
-        }
-    }
-    handleSubmit(event) {
-        event.preventDefault();
+  
+  handleChange(name) {
+  
+    return (event) => {
+      // line by line - copy, change, update state
+      const newState = Object.assign(this.state);
+      newState[name] = event.target.value;
+      this.setState(newState);
+    };
+  }
 
-        const payload = {
-            title: this.state.title,
-            description: this.state.description,
-            dueAt: this.state.dueAt
-        };
+  handleSubmit(event) {
+    event.preventDefault();
 
-        axios({
-            url: 'http://localhost:8080/todo',
-            method: 'POST',
-            data: payload
-        })
-        .then(() => {
-            console.log('Data sent')
-        })
-        .catch((err) => {
-            console.log(err)
-        });
-    }
+    const payload = {
+      title: this.state.title,
+      description: this.state.description,
+      dueAt: this.state.dueAt,
+    };
 
-render() {
+    axios({
+      url: "http://localhost:8080/todo",
+      method: "POST",
+      data: payload,
+    })
+      .then(() => {
+        console.log("Data sent");
+        this.resetData();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
-        console.log('State:', this.state);
+  render() {
+    console.log("State:", this.state);
 
-  return (
+    return (
       <form className="formTodo" onSubmit={this.handleSubmit}>
         <label className="title">
           Title:
-          <input type={"text"} value={this.state.title} 
-          name="Title" 
-          onChange={this.handleChange('title')} />
+          <input
+            type={"text"}
+            value={this.state.title}
+            name="Title"
+            onChange={this.handleChange("title")}
+          />
         </label>
         <label className="description">
           Description:
-          <input type={"text"} value={this.state.description} 
-          rows={5} maxLength={500} name="Description" 
-          onChange={this.handleChange('description')} />
+          <input
+            type={"text"}
+            value={this.state.description}
+            rows={5}
+            maxLength={500}
+            name="Description"
+            onChange={this.handleChange("description")}
+          />
         </label>
         <label className="dueat">
           Due Date:
-          <input type={"date"} value={this.state.dueAt} 
-          name="Due Date" 
-          onChange={this.handleChange('dueAt')} />
+          <input
+            type={"date"}
+            value={this.state.dueAt}
+            name="Due Date"
+            onChange={this.handleChange("dueAt")}
+          />
         </label>
         <button
           className="btn"
           id="submit"
           type="submit"
+          // onClick={this.handleClear}
         >
           Submit
         </button>
       </form>
-  );
-}
+    );
+  }
 }
 
-export default CreateTodoForm
+export default CreateTodoForm;
+
+// Check in with Brad about:
+// clearing form after submit
+// changing date format
+// clearing duplicates and issue with TodoData.js - aka .map

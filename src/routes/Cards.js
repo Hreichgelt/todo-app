@@ -1,5 +1,5 @@
 import React from "react";
-import Todo from '../components/Todo'
+import AllTodoCards from '../components/AllTodoCards'
 import Header from '../components/Header'
 // import Footer from '../components/Footer'
 
@@ -7,7 +7,7 @@ const Cards = () => {
     return (
         <div>
             <Header />
-            <Todo />
+            <AllTodoCards/>
             {/* <Footer /> */}
         </div>
     )
