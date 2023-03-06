@@ -3,7 +3,6 @@ import "./styles/AllTodoCards.css";
 import { BsTrash } from "react-icons/bs";
 import { FaCheck } from "react-icons/fa";
 
-// functionality for complete and delete in this file.
 
 // Past due = red || Due soon = yellow || due later = green (card change color based on date?)
 
@@ -14,7 +13,24 @@ const formatDate = (date) => {
 };
 
 const AllTodos = (props) => {
+  // const [completedTodos, setCompletedTodos] = useState(0);
   const [todo, setTodo] = useState([]);
+
+  //  complete todo
+  // need these to show differently or drop to a new page - currently show at bottom
+  function completeTodo(id) {
+    const todoCopy = [...todo];
+    todoCopy.push(todoCopy.splice(id, 1)[0]);
+    setTodo(todoCopy);
+  }
+
+  // delete specific todo from list
+  // need functionality to timestamp this for tracking purposes
+  function deleteTodo(id) {
+    const todoCopy = [...todo];
+    todoCopy.filter(id, 1);
+    setTodo(todoCopy);
+  }
 
   useEffect(() => {
     const url = "http://localhost:8080/todo";
@@ -35,19 +51,27 @@ const AllTodos = (props) => {
 
   return (
     <div className="all-todos-container">
-      {todo.map((todo) => {
+      {todo.map((todo, id) => {
         return (
           <div className="todo-container" style={{ backgroundColor: "gray" }}>
             <div
               className="todo-card"
               key={todo.id}
-              style={{ backgroundColor: "red" }}
+              style={{ backgroundColor: todo.isCompleted ? "blue" : "red" }}
             >
               <div className="btns">
-                <button className="complete">
+                <button
+                  className="complete"
+                  id={id}
+                  onClick={() => completeTodo(id)}
+                >
                   <FaCheck />
                 </button>
-                <button className="delete">
+                <button
+                  className="delete"
+                  id={id}
+                  onClick={() => deleteTodo(id)}
+                >
                   <BsTrash />
                 </button>
               </div>

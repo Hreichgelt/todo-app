@@ -1,10 +1,6 @@
 import React from "react";
 import "./styles/CreateTodoForm.css";
 import axios from "axios";
-import { clear } from "@testing-library/user-event/dist/clear";
-// import { format } from 'date-fns';
-
-// format(new Date(), 'mm/dd/yyyy')
 
 // if(state.succeeded) {
 //   return <p>Todo Submitted!</p>
