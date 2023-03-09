@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMutation } from "react";
+import axios from "axios";
 import "./styles/AllTodoCards.css";
 import { BsTrash } from "react-icons/bs";
 import { FaCheck } from "react-icons/fa";
@@ -24,11 +25,11 @@ const AllTodos = (props) => {
     setTodo(todoCopy);
   }
 
-  // delete specific todo from list
-  // need functionality to timestamp this for tracking purposes
+
   function deleteTodo(id) {
     const todoCopy = [...todo];
-    todoCopy.filter(id, 1);
+    // todoCopy.filter(id, 1);
+    axios.delete(`http://localhost:8080/todo/${id}`)
     setTodo(todoCopy);
   }
 
