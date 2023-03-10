@@ -21,7 +21,8 @@ const AllTodos = (props) => {
   // need these to show differently or drop to a new page - currently show at bottom
   function completeTodo(id) {
     const todoCopy = [...todo];
-    todoCopy.push(todoCopy.splice(id, 1)[0]);
+    // todoCopy.push(todoCopy.splice(id, 1)[0]);
+    axios.useMutation(`http://localhost:8080/todo/${id}`)
     setTodo(todoCopy);
   }
 
