@@ -1,8 +1,11 @@
-import React, { useEffect, useState, useMutation } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./styles/AllTodoCards.css";
 import { BsTrash } from "react-icons/bs";
 import { FaCheck } from "react-icons/fa";
+
+// best practice caps removed /todo
+const API_URL = "http://localhost:9000";
 
 
 // Past due = red || Due soon = yellow || due later = green (card change color based on date?)
@@ -19,60 +22,60 @@ const AllTodos = (props) => {
 
   //  complete todo
   // need these to show differently or drop to a new page - currently show at bottom
-  function completeTodo(id) {
-    const todoCopy = [...todo];
-    // todoCopy.push(todoCopy.splice(id, 1)[0]);
-    axios.useMutation(`http://localhost:8080/todo/${id}`)
-    setTodo(todoCopy);
+  async function completeTodo (id) {
+    
+    await axios.put(`${API_URL}/todo/${id}`, {
+      completedAt: Date.now(),
+    });
+    await fetchData();
   }
 
-
+  // delete shows js array method for if no db was connected.
+  // axios.delete hits api endpoint
   function deleteTodo(id) {
     const todoCopy = [...todo];
     // todoCopy.filter(id, 1);
-    axios.delete(`http://localhost:8080/todo/${id}`)
+    axios.delete(`${API_URL}/todo/${id}`);
     setTodo(todoCopy);
   }
 
-  useEffect(() => {
-    const url = "http://localhost:8080/todo";
 
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        const json = await response.json();
-        console.log(json);
-        setTodo(json);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
+  const fetchData = async () => {
+    try {
+      const response = await fetch(`${API_URL}/todo`);
+      const json = await response.json();
+      console.log(json);
+      setTodo(json);
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
+  useEffect(() => {
 
     fetchData();
   }, []);
 
+  console.log(todo)
+  // _id is best practice for a Mongodb id 
   return (
     <div className="all-todos-container">
-      {todo.map((todo, id) => {
+      {todo.map((todo) => {
         return (
-          <div className="todo-container" style={{ backgroundColor: "gray" }}>
-            <div
-              className="todo-card"
-              key={todo.id}
-              style={{ backgroundColor: todo.isCompleted ? "blue" : "red" }}
-            >
+          <div className="todo-container">
+            <div className={todo.completedAt ? 'todo-card2' : 'todo-card' } key={todo._id}>
               <div className="btns">
                 <button
                   className="complete"
-                  id={id}
-                  onClick={() => completeTodo(id)}
+                  id={todo._id}
+                  onClick={() => completeTodo(todo._id)}
                 >
                   <FaCheck />
                 </button>
                 <button
                   className="delete"
-                  id={id}
-                  onClick={() => deleteTodo(id)}
+                  id={todo._id}
+                  onClick={() => deleteTodo(todo._id)}
                 >
                   <BsTrash />
                 </button>

@@ -16,11 +16,21 @@
     padding: 1rem;
     margin: 1rem;
     border-radius: 6%;
+    background-color: gray;
 }
 
 .todo-card {
     width: 250px;
     height: 250px;
+    border-radius: 6%;
+    box-shadow: 5px 5px rgb(56, 66, 61);
+    background-color: red;
+}
+
+.todo-card2 {
+    width: 250px;
+    height: 250px;
+    background-color:lightslategrey;
     border-radius: 6%;
     box-shadow: 5px 5px rgb(56, 66, 61);
 }
