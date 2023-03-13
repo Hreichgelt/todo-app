@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
+import './styles/Header.css'
 import { IoCreate } from "react-icons/io"
 import { FcTodoList } from "react-icons/fc"
 
@@ -10,7 +11,10 @@ return (
     <>
     <div className="header"> 
     <h1>
-        <Link to="/" onClick={() => props.setPage("To Do | Home")}><span>To Do</span>
+        <Link className="allToDos" to="/" onClick={() => props.setPage("To Do | Home")}><span>All To Dos</span>
+        </Link>
+        <br></br>
+        <Link className="form" to="/Create" onClick={() => props.setPage("Create To Do | Form")}><span>Create To Do</span>
         </Link>
     </h1>
     </div>

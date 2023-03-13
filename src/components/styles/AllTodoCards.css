@@ -1,18 +1,14 @@
 
 .all-todos-container {
-    grid-template-areas: 
-    'btns    btns'
-    'todo-card';
-    width: auto;
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
     background-color: darkgrey;
-    grid-template-rows: repeat(3, auto);
-    justify-content: center;
     padding: 1rem; 
 }
 
 .todo-container {
-    width: auto;
+    width: fit-content;
     padding: 1rem;
     margin: 1rem;
     border-radius: 6%;
@@ -58,9 +54,10 @@
     margin-left: .25rem;
 }
 
-/* @media only screen and (min-width: 700px) {
-  .todo-container {
-
+/* @media only screen and (min-width: 1020px) {
+    .all-todos-container .todo-container .todo-card{
+        display: grid;
+        grid-template-columns: 200px 200px 200px 200px;
 }
 } */
 
