@@ -1,4 +1,5 @@
 
+
 .all-todos-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -38,6 +39,12 @@
     margin: .25rem;
 }
 
+button:hover{
+    cursor: grab;
+    background-color: rgb(171, 169, 168);
+   z-index: inherit;
+}
+
 .complete, .delete {
     
     width: min-content;
@@ -54,24 +61,32 @@
     margin-left: .25rem;
 }
 
-/* @media only screen and (min-width: 1020px) {
-    .all-todos-container .todo-container .todo-card{
+@media only screen and (max-width: 1500px) {
+    .all-todos-container {
         display: grid;
-        grid-template-columns: 200px 200px 200px 200px;
+        grid-gap: 10px;
+        grid-template-columns: 1fr 1fr 1fr;
 }
-} */
+}
 
-/* Check out CSS Grid  */
-
-
-/* @media only screen and (max-width: 900) {
-    .todo-container, .todo-card .btns{
+@media only screen and (max-width: 960px) {
+    .all-todos-container {
         display: grid;
-        grid-template-columns: repeat(3, 12px);
-        grid-template-rows: repeat(1, auto);
-        justify-content: space-between;
-        border-radius: 6%;
-        padding: .25rem;
-        margin: .25rem;
+        grid-gap: 10px;
+        grid-template-columns: 1fr 1fr;
     }
-}  */
+}
+
+@media only screen and (max-width: 630px) {
+    .all-todos-container {
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    .todo-container {
+        margin-left: 5rem;
+    }
+}
