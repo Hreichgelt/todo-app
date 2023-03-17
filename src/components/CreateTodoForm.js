@@ -66,6 +66,7 @@ class CreateTodoForm extends React.Component {
     console.log("State:", this.state);
 
     return (
+    <div className="formTodoWrap">
       <form className="formTodo" onSubmit={this.handleSubmit}>
         <label className="title">
           Title:
@@ -105,6 +106,7 @@ class CreateTodoForm extends React.Component {
           Submit
         </button>
       </form>
+      </div>
     );
   }
 }
