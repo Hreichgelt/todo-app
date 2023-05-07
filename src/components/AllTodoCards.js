@@ -64,7 +64,7 @@ const AllTodos = (props) => {
         return (
           <div className="todo-container">
             <div className={todo.completedAt ? 'todo-card2' : 'todo-card' } key={todo._id}>
-              <div className="btns">
+              {/* <div className="btns">
                 <button
                   className="complete"
                   id={todo._id}
@@ -79,11 +79,11 @@ const AllTodos = (props) => {
                 >
                   <BsTrash />
                 </button>
-              </div>
+              </div> */}
               <div className="details" style={{ color: "black" }}>
                 {todo.text}
                 <h3 className="title">{todo.title}</h3>
-                <h4 className="description">{todo.description}</h4>
+                {/* <h4 className="description">{todo.description}</h4> */}
                 <h4 className="dueAt">{formatDate(todo.dueAt)}</h4>
               </div>
             </div>

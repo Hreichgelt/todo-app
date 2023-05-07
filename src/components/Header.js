@@ -11,10 +11,10 @@ return (
     <>
     <div className="header"> 
     <h1>
-        <Link className="allToDos" to="/" onClick={() => props.setPage("To Do | Home")}><span>All To Dos</span>
-        </Link>
+        {/* <Link className="allToDos" to="/" onClick={() => props.setPage("To Do | Home")}><span>All To Dos</span>
+        </Link> */}
         <br></br>
-        <Link className="form" to="/Create" onClick={() => props.setPage("Create To Do | Form")}><span>Create To Do</span>
+        <Link className="form" to="/Create" onClick={() => props.setPage("Create To Do | Form")}><span>Create To-Do</span>
         </Link>
     </h1>
     </div>
