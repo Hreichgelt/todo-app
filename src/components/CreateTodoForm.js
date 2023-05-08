@@ -69,31 +69,31 @@ class CreateTodoForm extends React.Component {
     <div className="formTodoWrap">
       <form className="formTodo" onSubmit={this.handleSubmit}>
         <label className="title">
-          Title:
           <input
             type={"text"}
             value={this.state.title}
             name="Title"
+            placeholder="Title"
             onChange={this.handleChange("title")}
           />
         </label>
         <label className="description">
-          Description:
           <input
             type={"text"}
             value={this.state.description}
             rows={5}
             maxLength={500}
             name="Description"
+            placeholder="Description"
             onChange={this.handleChange("description")}
           />
         </label>
         <label className="dueat">
-          Due Date:
           <input
             type={"date"}
             value={this.state.dueAt}
             name="Due Date"
+            placeholder="Due Date"
             onChange={this.handleChange("dueAt")}
           />
         </label>

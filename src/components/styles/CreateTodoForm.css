@@ -1,16 +1,16 @@
 .formTodoWrap {
-    border-radius: 6%;
-    background-color: darkgrey;
-    padding: 3rem;
-    margin: 3rem;
+    /* border-radius: 6%; */
+    /* background-color: darkgrey; */
+    /* padding: 3rem;
+    margin: 3rem; */
 }
 
 .formTodo {
- background-color: gray;
- padding: 1rem;
+ /* background-color: gray; */
+ /* padding: 1rem;
  margin: 5rem;
  border-radius: 6%;
- box-shadow: 5px 5px rgb(56, 66, 61);
+ box-shadow: 5px 5px rgb(56, 66, 61); */
 }
 
 label {
