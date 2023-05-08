@@ -77,17 +77,6 @@ class CreateTodoForm extends React.Component {
             onChange={this.handleChange("title")}
           />
         </label>
-        <label className="description">
-          <input
-            type={"text"}
-            value={this.state.description}
-            rows={5}
-            maxLength={500}
-            name="Description"
-            placeholder="Description"
-            onChange={this.handleChange("description")}
-          />
-        </label>
         <label className="dueat">
           <input
             type={"date"}
@@ -95,6 +84,17 @@ class CreateTodoForm extends React.Component {
             name="Due Date"
             placeholder="Due Date"
             onChange={this.handleChange("dueAt")}
+          />
+        </label>
+        <label className="description">
+          <input
+            type={"text"}
+            value={this.state.description}
+            rows={5}
+            maxLength={500}
+            name="Description"
+            placeholder="Notes"
+            onChange={this.handleChange("description")}
           />
         </label>
         <button
