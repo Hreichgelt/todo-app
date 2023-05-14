@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
-import './styles/Header.css'
+import '../components/styles/Header2.css'
 import { IoCreate } from "react-icons/io"
 import { FcTodoList } from "react-icons/fc"
 
