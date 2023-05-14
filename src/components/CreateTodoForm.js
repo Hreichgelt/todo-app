@@ -87,11 +87,11 @@ class CreateTodoForm extends React.Component {
           />
         </label>
         <label className="description">
-          <input
+          <input className="notes"
             type={"text"}
             value={this.state.description}
-            rows={5}
-            maxLength={500}
+            // rows={500}
+            // maxLength={500}
             name="Description"
             placeholder="Notes"
             onChange={this.handleChange("description")}
@@ -103,7 +103,7 @@ class CreateTodoForm extends React.Component {
           type="submit"
           // onClick={this.handleClear}
         >
-          Submit
+          Save
         </button>
       </form>
       </div>

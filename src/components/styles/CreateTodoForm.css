@@ -1,40 +1,39 @@
 .formTodoWrap {
-    /* border-radius: 6%; */
-    /* background-color: darkgrey; */
-    /* padding: 3rem;
-    margin: 3rem; */
+display: flex;
+flex-direction: column;
 }
 
 .formTodo {
- /* background-color: gray; */
- /* padding: 1rem;
- margin: 5rem;
- border-radius: 6%;
- box-shadow: 5px 5px rgb(56, 66, 61); */
+ /* padding: 1rem; */
+ /* margin: 5rem; */
+
 }
 
 label {
- /* width: auto; */
- display: grid;
- grid-template-rows: 1fr 1fr 1fr 1fr;
- grid-gap: 10px;
+ margin: 5%;
  font-size: xx-large;
-
 }
 
-/* .title{
-} */
-
 input {
+    display: flex;
+    flex-direction: row;
     font-size: x-large;
-    height: auto;
-    box-shadow: 5px 5px rgb(56, 66, 61);
+    /* line-height: 2; */
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 5%;
+
 }
 
 .btn {
-    font-size: x-large;
-    padding: 1rem;
-    margin: 5rem;
+    font-size: large;
+    padding: .5rem;
+    margin: 2rem 75%;
     border-radius: 6%;
-    box-shadow: 5px 5px rgb(56, 66, 61);
+    color: #FFFFFF;
+    background-color: #087990;
+}
+
+.notes {
+line-height: 6;
 }
