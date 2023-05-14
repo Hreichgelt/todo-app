@@ -1,12 +1,12 @@
 import React from "react";
 import CreateTodoForm from "../components/CreateTodoForm";
-import Header from '../components/Header'
+import Header2 from '../components/Header2'
 
 
 const Create = () => {
     return (
         <div>
-            <Header />
+            <Header2 />
             <CreateTodoForm />
         </div>
     )

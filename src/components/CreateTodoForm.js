@@ -67,6 +67,8 @@ class CreateTodoForm extends React.Component {
 
     return (
     <div className="formTodoWrap">
+      <h2>Create New To-Do</h2>
+
       <form className="formTodo" onSubmit={this.handleSubmit}>
         <label className="title">
           <input
