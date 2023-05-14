@@ -11,12 +11,17 @@ flex-direction: column;
 
 h2 {
     font-size: x-large;
-    margin: 2% 10%
+    margin: 2% 10%;
 }
 
 label {
  margin: 5%;
  font-size: xx-large;
+}
+
+input:hover {
+    border-color: #087990;
+    border-width: 3.5px;
 }
 
 input {
@@ -25,8 +30,8 @@ input {
     font-size: x-large;
     width: 80%;
     margin-left: 10%;
-    border-radius: 5%;
-
+    border:2px solid;
+    border-radius: 2.5%;
 }
 
 .btn {
