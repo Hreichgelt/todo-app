@@ -3,7 +3,7 @@
     height: 6rem;
   }
   
-  h1 {
+  /* h1 {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -13,7 +13,7 @@
     left: 25rem;
     top: .5rem;
     padding: 10px, 16px;
-  }
+  } */
   
   .allToDos {
     font-family: "Inter";
@@ -25,5 +25,11 @@
     border: 1px solid #ffffff;
     border-radius: 6px;
     border-width: 2px;
+  }
+
+  link {
+    display: flex;
+    justify-content: flex-end;
+
   }
   
