@@ -41,13 +41,14 @@
     padding: 24px;
 }
 
-/* .btns {
+.btns {
     justify-content: space-between;
     border-radius: 6%;
     padding: .25rem;
     margin: .25rem;
 }
 
+/* 
 button:hover{
     cursor: grab;
     background-color: rgb(171, 169, 168);

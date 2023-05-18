@@ -18,9 +18,9 @@ render() {
             <h2>Edit | Complete | Delete</h2>
             <div className="one-todo-card">
                 <div className="card-items">
-                    <div className="title"></div>
-                    <div className="desc"></div>
-                    <div className="date"></div>
+                    <div className="title">This is a Title</div>
+                    <div className="desc">This is the description</div>
+                    <div className="date">This is the date</div>
                     <div className="btns">
                 <button
                   className="complete"
@@ -37,7 +37,6 @@ render() {
                   <BsTrash />
                 </button>
                     </div>
-
                 </div>
             </div>
         </div>
