@@ -1,7 +1,8 @@
 import React from 'react';
-import { Route, Routes } from "react-router-dom";
+// import { Route, Routes } from "react-router-dom";
 import Cards from "./routes/Cards";
 import Create from "./routes/Create";
+import OneCard from "./routes/OneCard";
 import './App.css';
 import {
   createBrowserRouter,
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/Create",
     element: <Create />
+  },
+  {
+    path: "/OneCard",
+    element: <OneCard />
   }
 ]);
 
